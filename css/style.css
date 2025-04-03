@@ -82,6 +82,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    overflow: hidden;
 }
 
 .carousel-container {
@@ -92,20 +93,18 @@ body {
 .carousel-slide {
     display: flex;
     width: 300%; /* 3 imagens = 300% */
-    height: 300px; /* Altura fixa */
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    flex: 0 0 33.333%; /* 1/3 da largura total */
-    width: 33.333%;
-    height: 100%;
+    flex: 0 0 100%;
+    width: 100%;
 }
 
 .carousel-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Enquadra a imagem */
+    height: 300px; /* Ajuste conforme necessário */
+    object-fit: cover;
     display: block;
 }
 
@@ -119,10 +118,11 @@ body {
     font-size: 18px;
     color: white;
     cursor: pointer;
+    z-index: 10;
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev { left: 10px; }
+.next { right: 10px; }
 
 .prev:hover, .next:hover {
     background: rgba(0, 0, 0, 0.8);
