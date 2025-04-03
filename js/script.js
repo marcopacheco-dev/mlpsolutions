@@ -5,17 +5,23 @@ function openWhatsApp() {
 
 // Função para Carrosel
 document.addEventListener("DOMContentLoaded", () => {
-    let currentIndex = 0;
     const slideContainer = document.querySelector(".carousel-slide");
     const slides = document.querySelectorAll(".carousel-item");
     const totalSlides = slides.length;
+    let currentIndex = 0;
 
     function moveSlide(step) {
-        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-        const slideWidth = 100 / totalSlides; // Calcula a largura percentual de cada slide
-        slideContainer.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        currentIndex += step;
+
+        // Loop: volta ao início ou fim
+        if (currentIndex >= totalSlides) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = totalSlides - 1;
+
+        const offset = -(currentIndex * (100 / totalSlides));
+        slideContainer.style.transform = `translateX(${offset}%)`;
     }
 
+    // Eventos dos botões
     document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
     document.querySelector(".next").addEventListener("click", () => moveSlide(1));
 
