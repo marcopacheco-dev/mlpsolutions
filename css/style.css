@@ -340,7 +340,12 @@ body {
     }
 
     .perfil-image {
-        max-width: 180px;
+        width: 150px;  /* Ajuste conforme necessário */
+        height: 150px; /* Igual à largura para formar um círculo */
+        border-radius: 50%;
+        object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+        display: block;
+        margin: auto;
     }
 
     .perfil-image img {
