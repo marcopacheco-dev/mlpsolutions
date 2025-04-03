@@ -79,58 +79,53 @@ body {
 
 .carousel {
     position: relative;
-    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .carousel-container {
-    width: 100%;
     overflow: hidden;
-    position: relative;
+    width: 100%;
 }
 
 .carousel-slide {
     display: flex;
-    width: 300%; /* 100% por imagem, para 3 imagens */
-    height: 300px; /* Altura fixa para o slide */
+    width: 300%; /* 3 imagens = 300% */
+    height: 300px; /* Altura fixa para enquadramento */
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
     flex: 0 0 33.333%; /* Cada item ocupa exatamente 1/3 da largura */
     width: 33.333%;
-    height: 100%; /* Herda a altura do .carousel-slide */
+    height: 100%;
 }
 
 .carousel-item img {
     width: 100%;
-    height: 100%; /* Ocupa todo o espaço do item */
-    object-fit: cover; /* Enquadra a imagem */
-    border-radius: 10px;
-    display: block;
+    height: 100%; /* Preenche o container */
+    object-fit: cover; /* Enquadra a imagem mantendo proporção */
+    display: block; /* Remove espaços indesejados */
 }
 
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     border: none;
     padding: 10px 15px;
-    cursor: pointer;
     font-size: 18px;
-    border-radius: 5px;
     color: white;
-    z-index: 10;
+    cursor: pointer;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 20px; }
+.next { right: 20px; }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* Seção Sobre Nós */
