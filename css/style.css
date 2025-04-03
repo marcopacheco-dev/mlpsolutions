@@ -83,6 +83,12 @@ body {
     max-width: 800px;
     margin: auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8; /* Fundo suave para destacar as imagens */
+    padding: 20px;
+    border-radius: 10px;
 }
 .carousel-container {
     display: flex;
@@ -92,25 +98,37 @@ body {
 .carousel-slide {
     width: 100%;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .carousel-slide img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
 }
-.prev { left: 10px; }
-.next { right: 10px; }
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 /* Seção Sobre Nós */
 .perfil {

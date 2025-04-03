@@ -14,5 +14,8 @@ function moveSlide(step) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    setInterval(() => moveSlide(1), 3000); // Troca de slide a cada 3 segundos
+    document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
+    document.querySelector(".next").addEventListener("click", () => moveSlide(1));
+
+    setInterval(() => moveSlide(1), 5000); // Troca automática a cada 5 segundos
 });
