@@ -96,24 +96,20 @@ body {
 
 .carousel-container {
     width: 100%;
-    max-width: 600px; /* Ajuste conforme necessário */
-    height: 300px; /* Ajuste conforme necessário */
+    max-width: 600px;
+    height: 300px;
     margin: auto;
     overflow: hidden;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .carousel-slide {
     display: flex;
-    width: 100%;
+    width: 300%; /* Cada imagem ocupa 100%, então o total é 3x100% */
     transition: transform 0.5s ease-in-out;
 }
 .carousel-slide img {
-    width: 100%;
+    width: 100%; /* Cada imagem ocupa exatamente o espaço do container */
     height: auto;
-    max-height: 100%;
     object-fit: contain;
     border-radius: 10px;
 }
