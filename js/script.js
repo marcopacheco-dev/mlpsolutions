@@ -7,12 +7,13 @@ function openWhatsApp() {
 document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const slideContainer = document.querySelector(".carousel-slide");
-    const slides = document.querySelectorAll(".carousel-item"); // Alterado para .carousel-item
+    const slides = document.querySelectorAll(".carousel-item");
     const totalSlides = slides.length;
 
     function moveSlide(step) {
         currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        const slideWidth = 100 / totalSlides; // Calcula a largura percentual de cada slide
+        slideContainer.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
 
     document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));

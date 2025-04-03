@@ -87,25 +87,26 @@ body {
 
 .carousel-container {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Garante que apenas uma imagem seja visível por vez */
 }
 
 .carousel-slide {
     display: flex;
+    width: 300%; /* 100% por imagem, para 3 imagens */
     transition: transform 0.5s ease-in-out;
-    width: 100%;
 }
 
 .carousel-item {
-    flex: 0 0 100%; /* Cada item ocupa 100% da largura do container */
-    max-width: 100%;
+    flex: 0 0 33.33%; /* Cada item ocupa 1/3 da largura total (para 3 imagens) */
+    width: 100%;
 }
 
 .carousel-item img {
     width: 100%;
     height: 300px; /* Altura fixa, ajuste conforme necessário */
-    object-fit: cover; /* Mantém proporção e cobre o espaço */
+    object-fit: cover; /* Enquadra a imagem mantendo a proporção */
     border-radius: 10px;
+    display: block; /* Remove espaços indesejados */
 }
 
 .prev, .next {
@@ -119,7 +120,6 @@ body {
     font-size: 18px;
     border-radius: 5px;
     z-index: 1000;
-    color: white;
 }
 
 .prev { left: 30px; }
