@@ -160,10 +160,12 @@ body {
 }
 
 .perfil-image img {
-    width: 200px; /* Define uma largura fixa */
-    height: 200px; /* Define uma altura fixa */
+    width: 150px; /* Ajuste conforme necessário */
+    height: 150px; /* Mesmo valor da largura para formar um círculo */
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover; /* Mantém a proporção correta dentro do círculo */
+    display: block;
+    margin: auto;
 }
 
 /* Equipamentos Responsivos */
