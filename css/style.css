@@ -75,6 +75,46 @@ body {
     height: 55px;
 }
 
+/* Seção Carrosel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+.carousel-slide img {
+    width: 100%; /* Garante que a imagem ocupa toda a largura do carrossel */
+    max-width: 800px; /* Evita que fique muito grande */
+    height: auto; /* Mantém a proporção correta */
+    max-height: 400px; /* Define um limite para a altura */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    border-radius: 10px;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
 /* Seção Sobre Nós */
 .perfil {
     padding: 40px 0;
