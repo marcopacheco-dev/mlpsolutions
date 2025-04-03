@@ -4,13 +4,15 @@ function openWhatsApp() {
 }
 
 // Função para Carrosel
-let currentSlide = 0;
+let currentIndex = 0;
+
 function moveSlide(step) {
     const slides = document.querySelectorAll(".carousel-slide");
-    slides[currentSlide].style.display = "none";
-    currentSlide = (currentSlide + step + slides.length) % slides.length;
-    slides[currentSlide].style.display = "block";
+    const totalSlides = slides.length;
+    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+    document.querySelector(".carousel-container").style.transform = `translateX(-${currentIndex * 100}%)`;
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".carousel-slide")[currentSlide].style.display = "block";
+    setInterval(() => moveSlide(1), 3000); // Troca de slide a cada 3 segundos
 });
