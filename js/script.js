@@ -4,18 +4,21 @@ function openWhatsApp() {
 }
 
 // Função para Carrosel
-let currentIndex = 0;
-
-function moveSlide(step) {
+document.addEventListener("DOMContentLoaded", () => {
+    let currentIndex = 0;
     const slides = document.querySelectorAll(".carousel-slide");
     const totalSlides = slides.length;
-    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-    document.querySelector(".carousel-container").style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+    const container = document.querySelector(".carousel-container");
 
-document.addEventListener("DOMContentLoaded", () => {
+    function moveSlide(step) {
+        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+        container.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Corrigindo os event listeners para os botões
     document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
     document.querySelector(".next").addEventListener("click", () => moveSlide(1));
 
-    setInterval(() => moveSlide(1), 5000); // Troca automática a cada 5 segundos
+    // Adicionando rotação automática no carrossel
+    setInterval(() => moveSlide(1), 5000);
 });
