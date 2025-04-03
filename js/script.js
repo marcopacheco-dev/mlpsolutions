@@ -25,9 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 
-    // Auto-slide a cada 5 segundos
+    // Mudança automática a cada 5 segundos
     setInterval(() => {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlide();
     }, 5000);
 });
+
