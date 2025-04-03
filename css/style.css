@@ -79,50 +79,40 @@ body {
 
 .carousel {
     position: relative;
-    max-width: 90%;
+    width: 100%;
+    max-width: 800px; /* Limite para não ficar muito grande */
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .carousel-container {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel-slide {
     display: flex;
-    width: 300%; /* Ajustado conforme a quantidade de imagens */
+    width: 300%; /* 3 imagens = 300% */
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    flex: 0 0 100%;
-    width: 100%;
+    flex: 0 0 100%; /* Cada imagem ocupa 100% do container */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Flexbox para centralizar e manter a responsividade */
-.carousel-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    max-height: 500px; /* Define um limite máximo para não esticar demais */
-}
-
-.carousel-content img {
+.carousel-item img {
     width: 100%;
     max-width: 600px;
     height: auto;
-    max-height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Garante que a imagem fique dentro do espaço sem cortes */
     border-radius: 10px;
 }
 
+/* Botões de navegação */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -141,6 +131,13 @@ body {
 
 .prev:hover, .next:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-item img {
+        max-width: 90%;
+    }
 }
 
 
