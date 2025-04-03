@@ -6,7 +6,8 @@ function openWhatsApp() {
 // Função para Carrosel
 document.addEventListener("DOMContentLoaded", () => {
     const slideContainer = document.querySelector(".carousel-slide");
-    const totalSlides = document.querySelectorAll(".carousel-item").length;
+    const slides = document.querySelectorAll(".carousel-item");
+    const totalSlides = slides.length;
     let currentIndex = 0;
 
     function updateSlide() {
