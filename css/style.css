@@ -81,38 +81,33 @@ body {
     position: relative;
     width: 100%;
     max-width: 800px;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
-}
-
-.carousel-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .carousel-container {
     width: 100%;
-    max-width: 600px;
-    height: 300px; /* Ajuste conforme necessário */
-    margin: auto;
     overflow: hidden;
-    position: relative;
 }
+
 .carousel-slide {
     display: flex;
-    width: 300%; /* Define a largura total baseada no número de imagens */
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
-.carousel-slide img {
-    width: 100%; /* Garante que cada imagem ocupe 100% do container */
-    height: 100%; /* Define a altura total do container */
-    object-fit: cover; /* Ajusta a imagem para cobrir sem distorcer */
+
+.carousel-item {
+    flex: 0 0 100%; /* Cada item ocupa 100% da largura do container */
+    max-width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px; /* Altura fixa, ajuste conforme necessário */
+    object-fit: cover; /* Mantém proporção e cobre o espaço */
     border-radius: 10px;
 }
+
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -124,10 +119,11 @@ body {
     font-size: 18px;
     border-radius: 5px;
     z-index: 1000;
+    color: white;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 30px; }
+.next { right: 30px; }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);

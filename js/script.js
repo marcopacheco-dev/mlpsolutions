@@ -7,7 +7,7 @@ function openWhatsApp() {
 document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const slideContainer = document.querySelector(".carousel-slide");
-    const slides = document.querySelectorAll(".carousel-slide img");
+    const slides = document.querySelectorAll(".carousel-item"); // Alterado para .carousel-item
     const totalSlides = slides.length;
 
     function moveSlide(step) {
@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
     document.querySelector(".next").addEventListener("click", () => moveSlide(1));
 
-    // Adicionando rotação automática no carrossel
+    // Rotação automática
     setInterval(() => moveSlide(1), 5000);
 });
