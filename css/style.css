@@ -86,7 +86,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f8f8; /* Fundo suave para destacar as imagens */
     padding: 20px;
     border-radius: 10px;
 }
@@ -115,7 +114,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.6);
-    color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
