@@ -4,29 +4,22 @@ function openWhatsApp() {
 }
 
 // Função para Carrosel
-document.addEventListener("DOMContentLoaded", () => {
-    const slideContainer = document.querySelector(".carousel-slide");
-    const slides = document.querySelectorAll(".carousel-item img");
-    const totalSlides = slides.length;
-    let currentIndex = 0;
+const container = document.querySelector('.carousel-container');
+const items = document.querySelectorAll('.carousel-item');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+let index = 0;
 
-    function updateSlide() {
-        const offset = -(currentIndex * 100);
-        slideContainer.style.transform = `translateX(${offset}%)`;
-    }
+function updateCarousel() {
+    container.style.transform = `translateX(-${index * 100}%)`;
+}
 
-    document.querySelector(".prev").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlide();
-    });
+next.addEventListener('click', () => {
+    index = (index + 1) % items.length;
+    updateCarousel();
+});
 
-    document.querySelector(".next").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlide();
-    });
-
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlide();
-    }, 5000);
+prev.addEventListener('click', () => {
+    index = (index - 1 + items.length) % items.length;
+    updateCarousel();
 });

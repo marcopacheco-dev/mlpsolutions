@@ -79,58 +79,39 @@ body {
 
 .carousel {
     position: relative;
-    width: 100%;
-    max-width: 800px; /* Limite para não ficar muito grande */
-    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
 .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-slide {
     display: flex;
-    width: 300%; /* 3 imagens = 300% */
     transition: transform 0.5s ease-in-out;
 }
-
 .carousel-item {
-    flex: 0 0 100%; /* Cada imagem ocupa 100% do container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 100%;
 }
-
-.carousel-item img {
+.carousel img {
     width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: contain; /* Garante que a imagem fique dentro do espaço sem cortes */
-    border-radius: 10px;
+    display: block;
 }
-
-/* Botões de navegação */
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
+    background-color: rgba(0,0,0,0.5);
     color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-    z-index: 10;
+    font-size: 18px;
 }
-
 .prev { left: 10px; }
 .next { right: 10px; }
-
 .prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,0.8);
 }
 
 
