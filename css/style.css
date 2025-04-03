@@ -80,7 +80,7 @@ body {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Limite para não ficar muito grande */
+    max-width: 800px; 
     margin: 0 auto;
     overflow: hidden;
 }
@@ -93,12 +93,12 @@ body {
 
 .carousel-slide {
     display: flex;
-    width: 300%; /* 3 imagens = 300% */
+    width: 300%; 
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    flex: 0 0 100%; /* Cada imagem ocupa 100% do container */
+    flex: 0 0 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,37 +108,10 @@ body {
     width: 100%;
     max-width: 600px;
     height: auto;
-    object-fit: contain; /* Garante que a imagem fique dentro do espaço sem cortes */
+    object-fit: contain; 
     border-radius: 10px;
 }
 
-/* Botões de navegação */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .carousel-item img {
-        max-width: 90%;
-    }
-}
 
 
 /* Seção Sobre Nós */

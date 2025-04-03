@@ -6,7 +6,7 @@ function openWhatsApp() {
 // Função para Carrosel
 document.addEventListener("DOMContentLoaded", () => {
     const slideContainer = document.querySelector(".carousel-slide");
-    const slides = document.querySelectorAll(".carousel-item");
+    const slides = document.querySelectorAll(".carousel-item img");
     const totalSlides = slides.length;
     let currentIndex = 0;
 
@@ -25,10 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 
-    // Mudança automática a cada 5 segundos
     setInterval(() => {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlide();
     }, 5000);
 });
-
