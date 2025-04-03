@@ -86,20 +86,17 @@ body {
 }
 .carousel-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3 imagens, 100% cada */
 }
 .carousel-slide {
-    display: none;
     width: 100%;
-    text-align: center;
+    flex-shrink: 0;
 }
 .carousel-slide img {
-    width: 100%; /* Garante que a imagem ocupa toda a largura do carrossel */
-    max-width: 800px; /* Evita que fique muito grande */
-    height: auto; /* Mantém a proporção correta */
-    max-height: 400px; /* Define um limite para a altura */
-    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 10px;
 }
 .prev, .next {
