@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     function updateSlide() {
-        const offset = -(currentIndex * (100 / totalSlides));
+        const offset = -(currentIndex * 100);
         slideContainer.style.transform = `translateX(${offset}%)`;
     }
 
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 
+    // Auto-slide a cada 5 segundos
     setInterval(() => {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlide();
