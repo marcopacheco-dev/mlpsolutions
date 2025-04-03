@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 
-    // Rotação automática
     setInterval(() => {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlide();
